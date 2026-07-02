@@ -1,24 +1,10 @@
-# Python cache files
 __pycache__/
-*.py[cod]
-*$py.class
-
-# Virtual environments
+*.pyc
+.ipynb_checkpoints/
+.streamlit/
 .venv/
 venv/
-env/
 
-# PyCharm project settings
-.idea/
-
-# Model checkpoints and temporary outputs
-models/*.pt
-models/*.pth
-models/*.ckpt
-
-# Streamlit local settings
-.streamlit/
-
-# OS files
-.DS_Store
-Thumbs.db
+# Data and Weights
+models/best_translator_model.pth
+models/vocab_meta.pkl

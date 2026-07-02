@@ -21,7 +21,7 @@ def cached_load_or_train_model():
     # 모델 파일이 없으면 사용자가 바로 실행할 수 있도록 짧은 학습을 자동 수행합니다.
     if not MODEL_PATH.exists() or not META_PATH.exists():
         # 첫 실행 편의를 위해 학습을 수행하지만, 실무에서는 python -m src.train으로 미리 학습하는 것이 좋습니다.
-        train_model(epochs=80)
+        train_model(epochs=40)
     # 저장된 모델과 사전을 불러옵니다.
     return load_model()
 
@@ -74,10 +74,3 @@ if st.button("번역", type="primary"):
         st.subheader("번역 결과")
         # 번역 결과를 큰 박스 형태로 출력합니다.
         st.success(result)
-
-# 사용 예시를 화면 하단에 제공합니다.
-with st.expander("입력 예시"):
-    # 영어 예시를 안내합니다.
-    st.write("영어 → 한국어: `hello`, `thank you`, `i am a student`, `what are you doing`")
-    # 한국어 예시를 안내합니다.
-    st.write("한국어 → 영어: `안녕하세요`, `감사합니다`, `나는 학생입니다`, `무엇을 하고 있나요`")
